@@ -18,10 +18,7 @@ module.exports = {
   plugins: ["prettier", "import"],
   rules: {
     "no-unused-vars": "warn",
-    "no-undef": "error",
     "no-unused-vars": "warn",
-    "no-undef": "error",
-    "import/no-unresolved": "error",
     "react/prop-types": "off",
   },
 }

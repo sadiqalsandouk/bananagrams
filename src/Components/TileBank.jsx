@@ -1,14 +1,18 @@
+import React from "react"
+import { SortableContext } from "@dnd-kit/sortable"
 import Tile from "./Tile"
 
-const TileBank = ({ numberOfTiles }) => {
-  const tiles = Array.from({ length: numberOfTiles }, (_, index) => (
-    <Tile key={index} />
-  ))
-
+const TileBank = ({ tiles, tileLetters }) => {
   return (
-    <div className="player-hand">
+    <div className="TileBank">
       <h1>Tile Bank</h1>
-      <div className="tiles">{tiles}</div>
+      <SortableContext items={tiles}>
+        <div className="tiles">
+          {tiles.map((tileId, index) => (
+            <Tile letter={tileLetters[index]} key={tileId} id={tileId} />
+          ))}
+        </div>
+      </SortableContext>
     </div>
   )
 }

@@ -1,10 +1,14 @@
 import React from "react"
-import ReactDOM from "react-dom/client"
-import TileBank from "./Components/TileBank"
+import ReactDOM from "react-dom"
+import Game from "./Components/Game"
 import "./index.css"
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <TileBank numberOfTiles={7} />
-  </React.StrictMode>
-)
+const App = () => {
+  return (
+    <div className="App">
+      <Game />
+    </div>
+  )
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App />)
